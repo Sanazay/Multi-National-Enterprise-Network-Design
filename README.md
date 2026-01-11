@@ -1,74 +1,149 @@
-# 🚀 Multi-National Enterprise Network Project
-**A comprehensive network simulation connecting a Dubai HQ to branches in Sri Lanka, India, and Qatar.**
+# 🌐 Multi-National Enterprise Network Project
+### *GlobalConnect – Enterprise-Grade Network Simulation*
 
-![Network Topology](network_topology.png)
+> **A comprehensive enterprise network design connecting a Dubai Headquarters <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_United_Arab_Emirates.svg" alt="UAE" width="20"/> with international branches in Sri Lanka <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Flag_of_Sri_Lanka.svg" alt="SriLanka" width="20"/>, India <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg" alt="India" width="20"/>, and Qatar <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Qatar.svg" alt="Qatar" width="20"/>.**
+
+
+<p align="center">
+  <img src="network_topology.png" alt="GlobalConnect Network Topology (pic will be update)" width="800">
+</p>
+
+---
 
 ## 📌 Project Overview
-This project simulates a real-world enterprise network environment for a multi-national company ("GlobalConnect"). It demonstrates advanced networking concepts including WAN connectivity, secure VPN tunneling, dynamic routing, Voice over IP (VoIP), and centralized server management.
+This project simulates a **real-world multi-national enterprise network** for **GlobalConnect**, showcasing modern networking principles and best practices.  
+It is designed to reflect **enterprise-level WAN architecture, secure communications, and centralized service management**.
 
-**Tools Used:** Cisco Packet Tracer 8.2
-**Key Technologies:** OSPF, GRE Tunnels, VLANs, ROAS, DHCP, VoIP, NAT.
+**🛠 Tools Used**  
+- Cisco Packet Tracer **8.2**
+
+**🔑 Key Technologies**  
+- OSPF  
+- GRE VPN Tunnels  
+- VLANs & ROAS  
+- DHCP  
+- VoIP  
+- NAT  
 
 ---
 
 ## 🏗️ Network Architecture
 
-### 1. Headquarters (Dubai) 🇦🇪
-The central hub hosting the Core Layer and Server Farm.
-* **Hardware:** Cisco 2811 Router, 3560 Multilayer Switch, 2960 Access Switch.
-* **VLANs:** Data (10), Voice (20), Print (30), WiFi (40), Server Farm (50).
-* **Services:**
-    * **Core Switching:** Inter-VLAN routing handled by the L3 Switch.
-    * **Telephony:** CME (Call Manager Express) handling HQ extensions (1001-1010).
-    * **Intranet:** Main DNS/Web Server (`www.globalconnect.corp`).
+### 🏢 1. Headquarters — Dubai 🇦🇪
+The **central hub** hosting the Core Layer and Enterprise Server Farm.
 
-### 2. International Branches (Sri Lanka 🇱🇰, India 🇮🇳, Qatar 🇶🇦)
-Three remote sites connected via a simulated ISP WAN.
-* **Connectivity:** Each branch connects to a unique ISP Router.
-* **Tunneling:** **GRE VPN Tunnels** allow private branch traffic (10.x.x.x) to reach HQ securely over the public internet.
-* **Local Services:** Each branch has a local File Server.
+**Hardware**
+- Cisco **2811 Router**
+- Cisco **3560 Multilayer Switch**
+- Cisco **2960 Access Switch**
 
-### 3. ISP / WAN Layer 🌍
-A ring topology of 4 Routers simulating the Internet.
-* **Protocol:** OSPF Area 0 (Backbone).
-* **Redundancy:** Ring architecture ensures connectivity even if one ISP link fails.
+| Category | Devices |
+|--------|--------|
+| Network Devices | Cisco 2811 Router, Cisco 3560 Multilayer Switch, Cisco 2960 Access Switch |
+| End User Devices | PCs, Laptops |
+| Communication | IP Phones, Analog Phones |
+| Peripheral Devices | Printers |
+| Servers | DNS, Web, File, DHCP Servers |
+
+
+**VLAN Design**
+| VLAN | Purpose |
+|-----:|---------|
+| 10 | Data |
+| 20 | Voice |
+| 30 | Print |
+| 40 | Wi-Fi |
+| 50 | Server Farm |
+
+**Core Services**
+- **Inter-VLAN Routing:** Handled by the Layer-3 switch  
+- **Telephony:** CME (Call Manager Express) managing HQ extensions *(1001–1010)*  
+- **Intranet Services:** Central DNS & Web Server  
+  - `www.globalconnect.corp`
+
+---
+
+### 🌏 2. International Branches  
+**Sri Lanka 🇱🇰 • India 🇮🇳 • Qatar 🇶🇦**
+
+Remote branch offices connected securely to HQ via a simulated ISP WAN.
+
+- **Connectivity:** Each branch connects through a dedicated ISP router  
+- **Tunneling:**  
+  - **GRE VPN Tunnels** enable private internal traffic *(10.x.x.x)* over public WAN links  
+- **Local Services:**  
+  - Each branch hosts a local **File Server**
+
+---
+
+### 🌍 3. ISP / WAN Layer
+A **4-router ring topology** simulating the Internet backbone.
+
+- **Routing Protocol:** OSPF **Area 0 (Backbone)**
+- **High Availability:** Ring design ensures resilience during link failures
 
 ---
 
 ## ⚙️ Key Configurations & Features
 
 ### ✅ Dynamic Routing (OSPF)
-* Implemented OSPF Area 0 across all sites.
-* Used `redistribute static` at HQ to advertise the Server Farm to remote branches.
-* Configured Tunnels to participate in OSPF for seamless private routing.
-
-### ✅ Secure VPN (GRE Tunnels)
-* Created virtual point-to-point links between HQ and Branches.
-* **Sri Lanka Tunnel:** `172.16.0.0/30`
-* **India Tunnel:** `172.16.0.4/30`
-* **Qatar Tunnel:** `172.16.0.8/30`
-
-### ✅ Voice over IP (VoIP)
-* Configured `telephony-service` on all routers.
-* **VLAN 20** prioritized for Voice traffic.
-* IP Phones automatically register via Option 150.
-
-### ✅ Wireless Enterprise
-* WPA2-PSK Security implemented on Access Points.
-* Dedicated **VLAN 40** for Wireless management.
-* DHCP scopes configured to assign IPs to Pcs automatically.
+- OSPF Area 0 deployed across HQ, Branches, and ISP routers  
+- `redistribute static` configured at HQ to advertise Server Farm networks  
+- GRE Tunnel interfaces participate in OSPF for seamless private routing
 
 ---
 
-## 📸 Usage / Testing
-1.  **Web Access:** Open any PC in any branch and browse to `www.globalconnect.corp` to see the HQ Dashboard.
-2.  **Ping Test:** Successful pings from **Sri Lanka PC** (10.2.10.x) to **HQ Server** (10.1.50.10).
-3.  **VPN Check:** Use `tracert 10.1.50.10` from a branch to verify traffic passes through the Tunnel IP (172.16.x.x) and not the Public Internet.
+### 🔐 Secure VPN Connectivity (GRE)
+Virtual point-to-point tunnels connecting HQ and Branches:
+
+| Branch | Tunnel Network |
+|------|----------------|
+| Sri Lanka | `172.16.0.0/30` |
+| India | `172.16.0.4/30` |
+| Qatar | `172.16.0.8/30` |
+
+---
+
+### ☎️ Voice over IP (VoIP)
+- `telephony-service` configured on all routers  
+- **VLAN 20** prioritized for voice traffic  
+- IP Phones auto-register using **DHCP Option 150**
+
+---
+
+### 📶 Enterprise Wireless Network
+- **WPA2-PSK** secured Access Points  
+- Dedicated **VLAN 40** for wireless clients  
+- DHCP scopes automatically assign IP addresses
+
+---
+
+## 🧪 Usage & Testing
+
+1. **Web Access Test**  
+   - From any branch PC, browse:  
+     👉 `www.globalconnect.corp`
+
+2. **Connectivity Test**  
+   - Successful ping from **Sri Lanka PC** `(10.2.10.x)`  
+     to **HQ Server** `(10.1.50.10)`
+
+3. **VPN Verification**  
+   - Run:
+     ```bash
+     tracert 10.1.50.10
+     ```
+   - Confirm traffic flows through **Tunnel IPs (172.16.x.x)** instead of public WAN links
 
 ---
 
 ## 👨‍💻 Credits
-**Concept & Design:** MS. Sanaullah
-**Original Concept Assistance:** Eng. Mohamed Saleem Sanaullah
 
-*Project created as part of my small Networking Portfolio.*
+**Concept & Network Design**  
+- **Eng. MS. Sanaullah**
+
+---
+
+<p align="center">
+  <em>📁 Project developed as part of my professional Networking Portfolio</em>
+</p>
