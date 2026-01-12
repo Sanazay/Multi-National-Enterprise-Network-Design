@@ -1,7 +1,7 @@
 # 🌐 Multi-National Enterprise Network Project
 ### *GlobalConnect – Enterprise-Grade Network Simulation*
 
-> **A comprehensive enterprise network design connecting a Dubai Headquarters <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_United_Arab_Emirates.svg" alt="UAE" width="20"/> with international branches in Sri Lanka <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Flag_of_Sri_Lanka.svg" alt="SriLanka" width="20"/>, India <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg" alt="India" width="20"/>, and Qatar <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Qatar.svg" alt="Qatar" width="20"/>.**
+> **A comprehensive enterprise network design connecting a Dubai Headquarters with international branches in •Sri Lanka 🇱🇰 • India 🇮🇳 • Qatar 🇶🇦**
 
 
 <p align="center">
@@ -52,7 +52,6 @@ The **central hub** hosting the Core Layer and Enterprise Server Farm.
 | 10 | Data |
 | 20 | Voice |
 | 30 | Print |
-| 40 | Wi-Fi |
 | 50 | Server Farm |
 
 **Core Services**
@@ -111,9 +110,8 @@ Virtual point-to-point tunnels connecting HQ and Branches:
 
 ---
 
-### 📶 Enterprise Wireless Network
-- **WPA2-PSK** secured Access Points  
-- Dedicated **VLAN 40** for wireless clients  
+### 📶 Enterprise Network
+- **WPA2-PSK** secured Access Points   
 - DHCP scopes automatically assign IP addresses
 
 ---
