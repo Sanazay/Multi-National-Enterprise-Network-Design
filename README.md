@@ -5,8 +5,9 @@
 
 
 <p align="center">
-  <img src="network_topology.png" alt="GlobalConnect Network Topology (pic will be update)" width="800">
+  <img width="1919" height="990" alt="image" src="https://github.com/user-attachments/assets/455d6768-c63b-4f72-9ff9-1a7396b36bb7" />
 </p>
+
 
 ---
 
@@ -29,7 +30,7 @@ It is designed to reflect **enterprise-level WAN architecture, secure communicat
 
 ## 🏗️ Network Architecture
 
-### 🏢 1. Headquarters — Dubai 🇦🇪
+### 🏢 1. Headquarters - Dubai 🇦🇪
 The **central hub** hosting the Core Layer and Enterprise Server Farm.
 
 **Hardware**
