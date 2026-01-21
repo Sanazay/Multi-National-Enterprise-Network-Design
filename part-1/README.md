@@ -59,6 +59,26 @@ The **central hub** hosting the Core Layer and Enterprise Server Farm.
 - **Intranet Services:** Central DNS & Web Server  
   - `www.globalconnect.corp`
 
+### HQ-WEB
+<p align="center">
+  <img width="1919" height="990" alt="HQ-WEB image" src="https://github.com/user-attachments/assets/f3d7e3e7-a6aa-417e-8c7e-ae9c7e3059ad" />
+</p>
+
+### SL-WEB
+<p align="center">
+  <img width="1919" height="1019" alt="SL-WEB image" src="https://github.com/user-attachments/assets/271dee6f-2024-4926-a554-c4cd08b39458" />
+</p>
+
+### IND-WEB
+<p align="center">
+  <img width="1919" height="1017" alt="IND-WEB image" src="https://github.com/user-attachments/assets/b6bddf6f-ba40-4747-a792-69fa0ffb2ded" />
+</p>
+
+### QAT-WEB
+<p align="center">
+  <img width="1919" height="1017" alt="QAT-WEB image" src="https://github.com/user-attachments/assets/b9798303-27eb-4a7d-8794-ecb8b9ab89b1" />
+</p>
+
 ---
 
 ### 🌏 2. International Branches  
